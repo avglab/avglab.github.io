@@ -749,6 +749,8 @@ p {
 }
 
 .team-pi-grid .pi-card {
+  grid-template-rows: auto minmax(76px, auto) auto 1fr;
+  align-content: start;
   padding: 26px 22px;
   border: 1px solid color-mix(in srgb, var(--text) 8%, transparent);
   border-radius: var(--radius-lg);
@@ -777,8 +779,29 @@ p {
 }
 
 .pi-card p {
-  margin-top: 10px;
+  margin: 14px 0 0;
   color: var(--muted);
+}
+
+.pi-card h3 {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.person-title {
+  margin: 0;
+  color: var(--primary);
+  font-size: .82rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.pi-card .person-title {
+  margin-top: 0;
 }
 
 .join-card {
@@ -795,6 +818,7 @@ p {
 
 .member-card {
   display: grid;
+  grid-template-rows: auto minmax(44px, auto) auto 1fr;
   min-width: 0;
   justify-items: start;
   padding: 24px;
@@ -812,6 +836,17 @@ p {
 .member-card p {
   margin: 10px 0 0;
   color: var(--muted);
+}
+
+.member-card h3 {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+}
+
+.member-card .person-title {
+  margin-top: 2px;
+  color: var(--primary);
 }
 
 .join-card p,
