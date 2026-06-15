@@ -445,27 +445,34 @@ p {
 @media (min-width: 1400px) {
   .hero {
     grid-template-columns: minmax(0, 1fr) minmax(520px, 1fr);
-    min-height: clamp(560px, calc(100svh - 76px), 720px);
+    min-height: 0;
   }
 
   .hero-content {
-    padding-block: 44px;
+    align-content: start;
+    padding-block: clamp(72px, 9vh, 96px) 48px;
   }
 
   .hero h1 {
-    max-width: 760px;
-    font-size: clamp(3.4rem, 4.2vw, 5rem);
+    max-width: 720px;
+    font-size: clamp(3rem, 3.6vw, 4.25rem);
+    line-height: 1.04;
   }
 
   .hero-copy {
-    max-width: 60ch;
-    font-size: 1.08rem;
+    max-width: 58ch;
+    margin-top: 18px;
+    font-size: 1rem;
     line-height: 1.48;
+  }
+
+  .hero-actions {
+    margin-top: 22px;
   }
 
   .hero-visual,
   .hero-visual img {
-    min-height: 560px;
+    min-height: 620px;
   }
 }
 
