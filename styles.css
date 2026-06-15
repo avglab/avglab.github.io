@@ -405,42 +405,15 @@ p {
   object-position: center;
 }
 
-.stats-strip {
-  border-block: 1px solid color-mix(in srgb, var(--text) 8%, transparent);
-  background: var(--surface);
-  padding: 28px 0;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 16px;
-}
-
-.stat {
-  padding: 18px 12px;
-  text-align: center;
-}
-
-.stat strong {
-  display: block;
-  color: var(--primary);
-  font-family: var(--display);
-  font-size: clamp(2.2rem, 4vw, 3.8rem);
-  font-weight: 500;
-  line-height: 1;
-}
-
-.stat span {
-  color: var(--muted);
-  font-size: .75rem;
-  font-weight: 800;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
 .section {
   padding-block: clamp(76px, 9vw, 128px);
+}
+
+.about-section {
+  border-bottom: 1px solid color-mix(in srgb, var(--text) 7%, transparent);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--bg) 55%, var(--surface)), var(--surface) 110px);
+  padding-top: clamp(72px, 8vw, 116px);
 }
 
 .section-alt {
@@ -526,6 +499,54 @@ p {
 .project-list {
   display: grid;
   gap: clamp(60px, 8vw, 104px);
+}
+
+.coming-soon {
+  max-width: 720px;
+  margin-inline: auto;
+  padding: clamp(34px, 6vw, 64px);
+  border: 1px solid color-mix(in srgb, var(--text) 9%, transparent);
+  border-radius: var(--radius-lg);
+  background: var(--surface-strong);
+  box-shadow: 0 12px 36px rgba(31, 29, 24, .06);
+  text-align: center;
+}
+
+.coming-soon .project-tag {
+  margin-bottom: 18px;
+}
+
+.coming-soon p {
+  margin: 18px auto 26px;
+  color: var(--muted);
+}
+
+.publication-placeholder {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+}
+
+.publication-placeholder h2,
+.publication-placeholder h3 {
+  margin: 0 0 6px;
+  font-family: var(--body);
+  font-size: .78rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.publication-placeholder p {
+  margin: 0;
+  color: var(--faint);
+  font-size: .9rem;
+}
+
+.publication-placeholder-page {
+  max-width: 720px;
+  margin: 42px auto 0;
+  text-align: center;
 }
 
 .pi-research-grid {
@@ -885,7 +906,7 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.4fr) repeat(2, minmax(160px, .5fr));
+  grid-template-columns: minmax(0, 1.4fr) minmax(160px, .5fr);
   gap: 36px;
 }
 
@@ -971,10 +992,6 @@ p {
     display: none;
   }
 
-  .stats-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .about-grid,
   .contact-grid,
   .project,
@@ -1015,7 +1032,6 @@ p {
     gap: 4px;
   }
 
-  .stats-grid,
   .footer-grid {
     grid-template-columns: 1fr;
   }
