@@ -713,6 +713,7 @@ p {
 }
 
 .pi-photo figcaption {
+  display: none;
   padding: 12px 22px 0;
   color: var(--faint);
   font-size: .76rem;
@@ -722,7 +723,7 @@ p {
 }
 
 .pi-role {
-  display: none;
+  display: block;
   margin-bottom: 16px;
   color: var(--faint);
   font-size: .76rem;
@@ -1123,10 +1124,6 @@ p {
 
   .pi-photo {
     display: none;
-  }
-
-  .pi-role {
-    display: block;
   }
 }
 
