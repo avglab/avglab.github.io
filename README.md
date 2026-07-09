@@ -1,6 +1,6 @@
-# Gaines Lab Website Reference
+# VIM Surgery Lab Website
 
-Static reference webpage for the Gaines Vascular Lab at the University of Chicago.
+Static reference webpage for the VIM Surgery Lab at the University of Chicago.
 
 ## Files
 
