@@ -626,6 +626,10 @@ p {
   gap: clamp(60px, 8vw, 104px);
 }
 
+.research-detail-section .project-list {
+  gap: clamp(44px, 6vw, 76px);
+}
+
 .coming-soon {
   max-width: 720px;
   margin-inline: auto;
@@ -770,6 +774,11 @@ p {
   align-items: center;
 }
 
+.research-detail-section .project {
+  grid-template-columns: minmax(0, 1.05fr) minmax(300px, .78fr);
+  gap: clamp(24px, 4.5vw, 52px);
+}
+
 .project.reverse {
   direction: rtl;
 }
@@ -788,6 +797,18 @@ p {
     linear-gradient(135deg, var(--surface-strong), var(--accent-soft)),
     var(--surface-offset);
   box-shadow: var(--shadow);
+}
+
+.project-figure {
+  display: grid;
+  place-items: center;
+  background: var(--surface-strong);
+}
+
+.project-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .research-motif {
@@ -863,12 +884,40 @@ p {
   color: var(--muted);
 }
 
+.research-detail-section .project h2 {
+  font-size: clamp(1.75rem, 3.2vw, 2.9rem);
+}
+
+.research-detail-section .project p:not(.collab) {
+  margin-top: 10px;
+  font-size: .96rem;
+  line-height: 1.55;
+}
+
+.research-detail-section .project-tag {
+  margin-bottom: 12px;
+}
+
+.research-detail-section .collab {
+  margin-bottom: 10px;
+  font-size: .82rem;
+}
+
 .aims {
   display: grid;
   gap: 12px;
   margin: 22px 0 0;
   padding: 0;
   list-style: none;
+}
+
+.research-detail-section .aims {
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.research-detail-section .aims li {
+  font-size: .9rem;
 }
 
 .aims li {
