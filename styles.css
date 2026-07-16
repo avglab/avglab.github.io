@@ -423,14 +423,21 @@ p {
 }
 
 .page-title {
-  padding-bottom: clamp(48px, 6vw, 82px);
+  padding-block: clamp(42px, 5vw, 70px);
   background:
     linear-gradient(135deg, color-mix(in srgb, var(--primary-soft) 72%, transparent), transparent),
     var(--bg);
 }
 
+.page-title h1 {
+  max-width: 820px;
+  font-size: clamp(2.15rem, 3.6vw, 3.6rem);
+}
+
 .page-title .hero-copy {
-  max-width: 760px;
+  max-width: 700px;
+  font-size: clamp(1rem, 1.1vw, 1.16rem);
+  line-height: 1.55;
 }
 
 .section-header {
@@ -639,14 +646,14 @@ p {
   color: var(--muted);
 }
 
-.publication-placeholder {
+.funding-placeholder {
   margin-top: 28px;
   padding-top: 20px;
   border-top: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
 }
 
-.publication-placeholder h2,
-.publication-placeholder h3 {
+.funding-placeholder h2,
+.funding-placeholder h3 {
   margin: 0 0 6px;
   font-family: var(--body);
   font-size: .78rem;
@@ -655,13 +662,13 @@ p {
   text-transform: uppercase;
 }
 
-.publication-placeholder p {
+.funding-placeholder p {
   margin: 0;
   color: var(--faint);
   font-size: .9rem;
 }
 
-.publication-placeholder-page {
+.funding-placeholder-page {
   max-width: 720px;
   margin: 42px auto 0;
   text-align: center;
