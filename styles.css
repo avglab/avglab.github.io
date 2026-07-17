@@ -630,6 +630,74 @@ p {
   font-size: .96rem;
 }
 
+.history-publications {
+  margin-top: clamp(38px, 6vw, 72px);
+}
+
+.history-publications-header {
+  margin-bottom: 20px;
+}
+
+.history-publications-header h3 {
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+}
+
+.publication-link-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.publication-link {
+  display: block;
+  min-width: 0;
+  min-height: 140px;
+  padding: 18px 18px 20px;
+  border: 1px solid color-mix(in srgb, var(--text) 8%, transparent);
+  border-radius: var(--radius-md);
+  border-top: 3px solid var(--primary);
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--surface-strong) 92%, var(--primary-soft)), var(--surface-strong)),
+    var(--surface-strong);
+  box-shadow: 0 8px 24px rgba(31, 29, 24, .04);
+  text-decoration: none;
+}
+
+.publication-link:hover {
+  border-color: color-mix(in srgb, var(--primary) 32%, transparent);
+  box-shadow: 0 12px 32px rgba(31, 29, 24, .08);
+  transform: translateY(-2px);
+}
+
+.publication-link.science {
+  border-top-color: var(--accent);
+}
+
+.publication-link.gastro {
+  border-top-color: var(--charcoal);
+}
+
+.publication-link strong,
+.publication-link em {
+  display: block;
+}
+
+.publication-link strong {
+  color: var(--text);
+  font-family: var(--display);
+  font-size: clamp(1.05rem, 1.2vw, 1.28rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.publication-link em {
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: .86rem;
+  font-style: normal;
+  line-height: 1.42;
+}
+
 .project-list {
   display: grid;
   gap: clamp(60px, 8vw, 104px);
@@ -1225,6 +1293,10 @@ p {
     direction: ltr;
   }
 
+  .publication-link-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .pi-research-grid {
     grid-template-columns: 1fr;
   }
@@ -1266,6 +1338,10 @@ p {
   .join-card .button,
   .aims li {
     width: 100%;
+  }
+
+  .publication-link-grid {
+    grid-template-columns: 1fr;
   }
 
   .aims li {
