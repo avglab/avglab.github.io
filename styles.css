@@ -749,6 +749,13 @@ p {
   font-size: .9rem;
 }
 
+.funding-placeholder a {
+  color: var(--primary);
+  font-weight: 750;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
 .funding-placeholder-page {
   max-width: 720px;
   margin: 42px auto 0;
@@ -886,6 +893,28 @@ p {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.project-media-stack {
+  display: grid;
+  width: 100%;
+  gap: 16px;
+}
+
+.project-video {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  background: #000;
+  box-shadow: var(--shadow);
+}
+
+.project-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 .research-motif {
