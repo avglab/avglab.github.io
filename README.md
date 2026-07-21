@@ -6,7 +6,7 @@ Static reference webpage for the VIM Surgery Lab at the University of Chicago.
 
 - `index.html` contains the homepage content and section structure.
 - `research.html` is the research overview page.
-- `research-gaines.html`, `research-pi-two.html`, and `research-pi-three.html` are dedicated PI research pages.
+- `research-gaines.html`, `research-pi-two.html`, and `research-pi-three.html` are dedicated PI research page files. On Cloudflare, the Gaines page should be linked and indexed as `/research-gaines`.
 - `team.html` is the full lab members page.
 - `styles.css` controls the visual design, responsive layout, and light/dark themes.
 - `script.js` controls the theme toggle, mobile navigation, and scroll reveal behavior.
