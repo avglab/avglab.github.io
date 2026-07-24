@@ -897,8 +897,13 @@ p {
 
 .project-media-stack {
   display: grid;
+  min-width: 0;
   width: 100%;
   gap: 16px;
+}
+
+.project-content {
+  min-width: 0;
 }
 
 .project-video {
@@ -910,11 +915,16 @@ p {
   box-shadow: var(--shadow);
 }
 
-.project-video iframe {
+.project-video iframe,
+.project-video video {
   display: block;
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+.project-video video {
+  object-fit: contain;
 }
 
 .research-motif {
@@ -1133,7 +1143,7 @@ p {
 
 .member-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 22px;
   text-align: left;
 }
@@ -1294,6 +1304,22 @@ p {
   }
 }
 
+@media (max-width: 1100px) {
+  .research-detail-section .project,
+  .research-detail-section .project.reverse {
+    grid-template-columns: minmax(0, 1fr);
+    direction: ltr;
+    align-items: start;
+    gap: 28px;
+  }
+
+  .research-detail-section .project-media-stack,
+  .research-detail-section .project > .project-visual {
+    width: min(100%, 760px);
+    justify-self: center;
+  }
+}
+
 @media (max-width: 920px) {
   .site-nav,
   .nav-button {
@@ -1339,6 +1365,30 @@ p {
     aspect-ratio: 16 / 10;
   }
 
+  .research-detail-section {
+    padding-block: 64px;
+  }
+
+  .research-detail-section .project-list {
+    gap: 48px;
+  }
+
+  .research-detail-section .project {
+    align-items: start;
+    gap: 24px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid color-mix(in srgb, var(--text) 10%, transparent);
+  }
+
+  .research-detail-section .project:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+  }
+
+  .project-media-stack {
+    gap: 12px;
+  }
+
   .footer-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -1356,6 +1406,58 @@ p {
 
   .nav-actions {
     gap: 4px;
+  }
+
+  .page-title {
+    padding-block: 34px;
+  }
+
+  .page-title h1 {
+    font-size: 2rem;
+    line-height: 1.12;
+  }
+
+  .page-affiliation {
+    font-size: .74rem;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  .research-detail-section {
+    padding-block: 48px;
+  }
+
+  .research-detail-section .project-list {
+    gap: 40px;
+  }
+
+  .research-detail-section .project {
+    gap: 20px;
+    padding-bottom: 40px;
+  }
+
+  .research-detail-section .project h2 {
+    font-size: 1.65rem;
+    line-height: 1.18;
+  }
+
+  .research-detail-section .collab,
+  .funding-placeholder a {
+    overflow-wrap: anywhere;
+  }
+
+  .funding-placeholder {
+    margin-top: 22px;
+    padding-top: 16px;
+  }
+
+  .project-visual {
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius-md);
+  }
+
+  .project-video {
+    border-radius: var(--radius-md);
   }
 
   .footer-grid {
