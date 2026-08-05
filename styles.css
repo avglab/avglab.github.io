@@ -749,6 +749,10 @@ p {
   font-size: .9rem;
 }
 
+.funding-placeholder p + p {
+  margin-top: 8px;
+}
+
 .funding-placeholder a {
   color: var(--primary);
   font-weight: 750;
@@ -893,6 +897,22 @@ p {
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.project-visual.project-figure-natural {
+  aspect-ratio: auto;
+  padding: clamp(8px, 1vw, 14px);
+  background: #fff;
+}
+
+.project-figure-natural img {
+  display: block;
+  height: auto;
+}
+
+.project-figure-compact {
+  width: min(100%, 500px);
+  justify-self: center;
 }
 
 .project-media-stack {
@@ -1107,6 +1127,10 @@ p {
   display: block;
   object-fit: cover;
   object-position: center top;
+}
+
+.lavanya-photo {
+  object-position: center center;
 }
 
 .pi-card p {
