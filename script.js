@@ -65,3 +65,42 @@ const revealObserver = new IntersectionObserver(
 );
 
 reveals.forEach((element) => revealObserver.observe(element));
+
+document.querySelectorAll("[data-lab-carousel]").forEach((carousel) => {
+  const track = carousel.querySelector(".lab-carousel-track");
+  const slides = [...carousel.querySelectorAll("[data-carousel-slide]")];
+  const dots = [...carousel.querySelectorAll("[data-carousel-dot]")];
+  const previousButton = carousel.querySelector("[data-carousel-prev]");
+  const nextButton = carousel.querySelector("[data-carousel-next]");
+  const status = carousel.querySelector("[data-carousel-status]");
+  let activeIndex = 0;
+
+  function showSlide(index) {
+    activeIndex = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${activeIndex * 100}%)`;
+
+    slides.forEach((slide, slideIndex) => {
+      slide.setAttribute("aria-hidden", String(slideIndex !== activeIndex));
+    });
+
+    dots.forEach((dot, dotIndex) => {
+      const isActive = dotIndex === activeIndex;
+      dot.classList.toggle("active", isActive);
+      if (isActive) dot.setAttribute("aria-current", "true");
+      else dot.removeAttribute("aria-current");
+    });
+
+    status.textContent = `Photo ${activeIndex + 1} of ${slides.length}`;
+  }
+
+  previousButton?.addEventListener("click", () => showSlide(activeIndex - 1));
+  nextButton?.addEventListener("click", () => showSlide(activeIndex + 1));
+  dots.forEach((dot, dotIndex) => {
+    dot.addEventListener("click", () => showSlide(dotIndex));
+  });
+
+  carousel.addEventListener("keydown", (event) => {
+    if (event.key === "ArrowLeft") showSlide(activeIndex - 1);
+    if (event.key === "ArrowRight") showSlide(activeIndex + 1);
+  });
+});

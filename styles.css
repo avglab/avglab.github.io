@@ -1005,6 +1005,127 @@ p {
   object-fit: contain;
 }
 
+.lab-gallery-section {
+  background: var(--bg);
+}
+
+.lab-carousel {
+  max-width: 980px;
+  margin-inline: auto;
+}
+
+.lab-carousel-viewport {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background: var(--surface-offset);
+  box-shadow: var(--shadow);
+}
+
+.lab-carousel-track {
+  display: flex;
+  transition: transform .45s ease;
+}
+
+.lab-carousel-slide {
+  flex: 0 0 100%;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+}
+
+.lab-carousel-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: var(--surface-offset);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .38);
+  border-radius: 50%;
+  background: rgba(21, 17, 17, .78);
+  color: #fff;
+  cursor: pointer;
+  place-items: center;
+  transform: translateY(-50%);
+  transition: background .2s ease, transform .2s ease;
+}
+
+.carousel-button:hover {
+  background: var(--primary);
+  transform: translateY(-50%) scale(1.04);
+}
+
+.carousel-button:focus-visible,
+.carousel-dot:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.carousel-button svg {
+  width: 22px;
+  height: 22px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.carousel-button-prev {
+  left: 16px;
+}
+
+.carousel-button-next {
+  right: 16px;
+}
+
+.lab-carousel-footer {
+  display: flex;
+  min-height: 38px;
+  margin-top: 14px;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-dots {
+  display: flex;
+  gap: 9px;
+}
+
+.carousel-dot {
+  width: 9px;
+  height: 9px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.carousel-dot.active {
+  background: var(--primary);
+  transform: scale(1.25);
+}
+
+.carousel-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 .research-motif {
   position: relative;
   width: 100%;
@@ -1550,6 +1671,23 @@ p {
 
   .project-video {
     border-radius: var(--radius-md);
+  }
+
+  .lab-carousel-viewport {
+    border-radius: var(--radius-md);
+  }
+
+  .carousel-button {
+    width: 38px;
+    height: 38px;
+  }
+
+  .carousel-button-prev {
+    left: 10px;
+  }
+
+  .carousel-button-next {
+    right: 10px;
   }
 
   .footer-grid {
